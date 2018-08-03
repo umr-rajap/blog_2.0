@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guide to Military Mayhem</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+</head>
+<body>
+
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <div class="header item">
+        <i class="fighter jet icon"></i>
+        Military Vehicle NTK
+        <i class="fighter jet icon"></i>
+      </div>
+      <a href="/" class="item">Archive</a>
+      <a href="/blogs/new" class="item">Create a Blog</a>
+      <div class="right menu">
+                  <? if(!currentUser){ ?>
+                    <a class="ui item inverted yellow button" href="/login">LogIn</a>
+                    <a class="ui item inverted red button" href="/register"><i class="pencil alternate icon"></i>Register</a>
+                  <? } else{ ?>
+                    <a class="ui item" href="#">Hey, <?= currentUser.username ?>!</a>
+                    <a class="ui item nverted red button"  href="/logout"><i class="power off icon"></i>LogOut</a>
+                  <? } ?>
+                </div>
+              </div>
+    </div>
+  </div>
+
+  <? if(error && error.length > 0){?>
+            <div class="ui red message"><?= error ?></div>
+          <? } ?>
+            <? if(success && success.length > 0){?>
+            <div class="ui floating message"><?= success ?></div>
+          <? } ?>
+            <div id="love-u">

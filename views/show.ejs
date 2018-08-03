@@ -1,0 +1,42 @@
+
+<? include ./partials/header ?>
+
+<? const postUrl = '/blogs/' + blog._id; ?>
+
+<div class="ui main text container">
+
+  <div class="ui huge header">
+    <?= blog.title ?>
+  </div>
+
+  <div class="ui padded segment">
+    <div class="item">
+
+      <img class="ui rounded centered image" src="<?= blog.imageUrl ?>">
+
+      <div class="content">
+        <p><?= blog.created.toDateString() ?></p>
+      </div>
+
+      <div class="description">
+        <p><?- blog.body ?></p>
+      </div>
+
+      <a class="ui black icon button" href="<?= postUrl ?>/edit">
+        Edit
+        <i class="write icon right"></i>
+      </a>
+
+      <form id="delete" action="<?= postUrl ?>?_method=DELETE" method="POST">
+        <button class="ui red basic icon button">
+          Delete
+          <i class="bomb icon right"></i>
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+<? include ./partials/footer ?>
